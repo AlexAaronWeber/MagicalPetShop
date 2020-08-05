@@ -79,12 +79,24 @@ let smallPets = [
 ];
 
 let menuContainer = document.querySelector(".menu");
-let largeData = largePets[1];
 
-largePets.forEach((largePet) => {
-  let card = document.createElement("div");
-  let largeData = document.createElement("p");
-  let largeImage = document.createElement("img");
-});
+let largeContainer = document.querySelector(".large");
 
-console.log(largeData);
+const display = () => {
+  largePets.forEach((largePet) => {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    let typeSection = document.createElement("p");
+    typeSection.innerText = largePet.type;
+    let quantitySection = document.createElement("p");
+    quantitySection.innerText = largePet.quantity;
+    let priceSection = document.createElement("p");
+    priceSection.innerText = `¥${largePet.price}`;
+    let experienceSection = document.createElement("p");
+    experienceSection.innerText = largePet.experience;
+    let largeImage = document.createElement("img");
+    card.append(typeSection, quantitySection, priceSection, experienceSection);
+    largeContainer.append(card);
+  });
+};
+display();
