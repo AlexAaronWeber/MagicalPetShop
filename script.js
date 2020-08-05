@@ -79,3 +79,12 @@ let smallPets = [
 ];
 
 let menuContainer = document.querySelector(".menu");
+let largeData = largePets[1];
+
+largePets.forEach((largePet) => {
+  let card = document.createElement("div");
+  let largeData = document.createElement("p");
+  let largeImage = document.createElement("img");
+});
+
+console.log(largeData);
