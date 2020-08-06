@@ -90,6 +90,8 @@ let smallPets = [
   },
 ];
 
+let cartArray = [];
+
 // let imgArray = new Array();
 // imgArray[0] = new Image();
 // imgArray[0].src = "asianlung.png";
@@ -120,6 +122,7 @@ const display = () => {
     let addButton = document.createElement("button");
     addButton.innerText = "Add to Wagon";
     addButton.classList.add("cart-button");
+    // addButton.setAttribute("data-item", index);
     let imageDiv = document.createElement("div");
     imageDiv.append(newImage);
     imageDiv.classList.add("image-container");
@@ -137,6 +140,7 @@ const display = () => {
 display();
 
 let smallContainer = document.querySelector(".small");
+
 const smallDisplay = () => {
   smallPets.forEach((smallPet) => {
     let newImage = document.createElement("img");
@@ -160,6 +164,7 @@ const smallDisplay = () => {
     let addButton = document.createElement("button");
     addButton.innerText = "Add to Wagon";
     addButton.classList.add("cart-button");
+    // addButton.setAttribute("data-item", index);
     let imageDiv = document.createElement("div");
     imageDiv.append(newImage);
     imageDiv.classList.add("image-container");
@@ -176,3 +181,13 @@ const smallDisplay = () => {
   });
 };
 smallDisplay();
+
+// menuContainer.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("cart-button")) {
+//     let index = e.target.getAttribute("data-item");
+//     largePets.slice(index, 1) || smallPets.slice(index, 1);
+//     display();
+//   }
+// });
+
+let checkoutTotal = document.querySelector(".checkout");
