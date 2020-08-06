@@ -86,7 +86,7 @@ let smallPets = [
     quantity: 1,
     price: 12000,
     experience: "expert",
-    img: "images/mysteryyoda.png",
+    img: "images/yodasilhouette.jpg",
   },
 ];
 
