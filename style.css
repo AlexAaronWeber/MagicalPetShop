@@ -76,3 +76,9 @@ body {
   display: flex;
   position: relative;
 }
+.cart-button {
+  background-color: black;
+  color: white;
+  border-style: none;
+  font-family: "Grenze Gotisch", cursive;
+}

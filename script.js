@@ -79,16 +79,18 @@ let smallPets = [
   },
 ];
 
+// let imgArray = new Array();
+// imgArray[0] = new Image();
+// imgArray[0].src = "asianlung.png";
+
 let menuContainer = document.querySelector(".menu");
 
 let largeContainer = document.querySelector(".large");
-// const largeImages = new Array();
-// largeImages[0] = new Image();
-// largeImages[0].src = `images/dragon.png`;
+
 const display = () => {
   largePets.forEach((largePet) => {
     let newImage = document.createElement("img");
-    // newImage.setAttribute.src(largeImages[i]);
+    // newImage.setAttribute.src(imgArray[i]);
     let card = document.createElement("div");
     card.classList.add("card");
     let typeSection = document.createElement("p");
@@ -103,12 +105,15 @@ const display = () => {
     let experienceSection = document.createElement("p");
     experienceSection.innerText = largePet.experience;
     experienceSection.classList.add("card-text");
+    let addButton = document.createElement("button");
+    addButton.innerText = "Add to Wagon";
+    addButton.classList.add("cart-button");
     card.append(
       typeSection,
       quantitySection,
       priceSection,
       experienceSection,
-      newImage
+      addButton
     );
     largeContainer.append(card);
   });
@@ -133,7 +138,17 @@ const smallDisplay = () => {
     experienceSection.innerText = smallPet.experience;
     experienceSection.classList.add("card-text");
     let smallImage = document.createElement("img");
-    card.append(typeSection, quantitySection, priceSection, experienceSection);
+    let addButton = document.createElement("button");
+    addButton.innerText = "Add to Wagon";
+    addButton.classList.add("cart-button");
+
+    card.append(
+      typeSection,
+      quantitySection,
+      priceSection,
+      experienceSection,
+      addButton
+    );
     smallContainer.append(card);
   });
 };
