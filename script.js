@@ -90,8 +90,6 @@ let smallPets = [
   },
 ];
 
-let cartArray = [];
-
 // let imgArray = new Array();
 // imgArray[0] = new Image();
 // imgArray[0].src = "asianlung.png";
@@ -101,7 +99,7 @@ let menuContainer = document.querySelector(".menu");
 let largeContainer = document.querySelector(".large");
 
 const display = () => {
-  largePets.forEach((largePet) => {
+  largePets.forEach((largePet, index) => {
     let newImage = document.createElement("img");
     newImage.classList.add("image");
     newImage.setAttribute("src", largePet.img);
@@ -120,9 +118,10 @@ const display = () => {
     experienceSection.innerText = largePet.experience;
     experienceSection.classList.add("card-text");
     let addButton = document.createElement("button");
+    addButton.setAttribute("data-index", index);
+    addButton.setAttribute("data-type", "large");
     addButton.innerText = "Add to Wagon";
     addButton.classList.add("cart-button");
-    // addButton.setAttribute("data-item", index);
     let imageDiv = document.createElement("div");
     imageDiv.append(newImage);
     imageDiv.classList.add("image-container");
@@ -142,7 +141,7 @@ display();
 let smallContainer = document.querySelector(".small");
 
 const smallDisplay = () => {
-  smallPets.forEach((smallPet) => {
+  smallPets.forEach((smallPet, index) => {
     let newImage = document.createElement("img");
     newImage.classList.add("image");
     newImage.setAttribute("src", smallPet.img);
@@ -162,6 +161,8 @@ const smallDisplay = () => {
     experienceSection.classList.add("card-text");
     let smallImage = document.createElement("img");
     let addButton = document.createElement("button");
+    addButton.setAttribute("data-index", index);
+    addButton.setAttribute("data-type", "small");
     addButton.innerText = "Add to Wagon";
     addButton.classList.add("cart-button");
     // addButton.setAttribute("data-item", index);
@@ -190,4 +191,18 @@ smallDisplay();
 //   }
 // });
 
-let checkoutTotal = document.querySelector(".checkout");
+let cartArray = [];
+
+menuContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("cart-button")) {
+    let index = e.target.getAttribute("data-index");
+    let type = e.target.getAttribute("data-type");
+    if (type === "large") {
+      cartArray.push(largePets[index]);
+      console.log(cartArray);
+    } else {
+      cartArray.push(smallPets[index]);
+      console.log(cartArray);
+    }
+  }
+});
