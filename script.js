@@ -6,37 +6,42 @@ let largePets = [
     quantity: 2,
     price: 1200,
     experience: "expert",
-    // img: image,
+    img: "images/asianlung.png",
   },
   {
     type: "European Long-tail Dragon",
     quantity: 4,
     price: 1000,
     experience: "expert",
+    img: "images/europeanlongtail.png",
   },
   {
     type: "Unicorn",
     quantity: 3,
     price: 750,
     experience: "beginner",
+    img: "images/unicorn.svg",
   },
   {
     type: "Pegasus",
     quantity: 7,
     price: 900,
     experience: "intermediate",
+    img: "images/pegasus.png",
   },
   {
     type: "Griffin",
     quantity: 1,
     price: 4000,
     experience: "expert",
+    img: "images/griffin.jpg",
   },
   {
     type: "Castle-born Gargoyle",
     quantity: 4,
     price: 50,
     experience: "beginner",
+    img: "images/castlegargoyle.png",
   },
 ];
 
@@ -46,36 +51,42 @@ let smallPets = [
     quantity: 10,
     price: 100,
     experience: "intermediate",
+    img: "images/wyvern.jpg",
   },
   {
     type: "Autumnal Fairy",
     quantity: 15,
     price: 600,
     experience: "beginner",
+    img: "images/autumnalfairy.png",
   },
   {
     type: "Vernal Fairy",
     quantity: 15,
     price: 650,
     experience: "intermediate",
+    img: "images/vernalfairy.png",
   },
   {
     type: "Chapel-born Gargoyle",
     quantity: 7,
     price: 150,
     experience: "beginner",
+    img: "images/chapelgargoyle.png",
   },
   {
     type: "Cat Familiar",
     quantity: 10,
     price: 300,
     experience: "beginner",
+    img: "images/cat.jpg",
   },
   {
     type: "Baby Yoda",
     quantity: 1,
     price: 12000,
     experience: "expert",
+    img: "images/mysteryyoda.png",
   },
 ];
 
@@ -90,7 +101,8 @@ let largeContainer = document.querySelector(".large");
 const display = () => {
   largePets.forEach((largePet) => {
     let newImage = document.createElement("img");
-    // newImage.setAttribute.src(imgArray[i]);
+    newImage.classList.add("image");
+    newImage.setAttribute("src", largePet.img);
     let card = document.createElement("div");
     card.classList.add("card");
     let typeSection = document.createElement("p");
@@ -108,7 +120,11 @@ const display = () => {
     let addButton = document.createElement("button");
     addButton.innerText = "Add to Wagon";
     addButton.classList.add("cart-button");
+    let imageDiv = document.createElement("div");
+    imageDiv.append(newImage);
+    imageDiv.classList.add("image-container");
     card.append(
+      imageDiv,
       typeSection,
       quantitySection,
       priceSection,
@@ -123,6 +139,9 @@ display();
 let smallContainer = document.querySelector(".small");
 const smallDisplay = () => {
   smallPets.forEach((smallPet) => {
+    let newImage = document.createElement("img");
+    newImage.classList.add("image");
+    newImage.setAttribute("src", smallPet.img);
     let card = document.createElement("div");
     card.classList.add("card");
     let typeSection = document.createElement("p");
@@ -141,8 +160,12 @@ const smallDisplay = () => {
     let addButton = document.createElement("button");
     addButton.innerText = "Add to Wagon";
     addButton.classList.add("cart-button");
+    let imageDiv = document.createElement("div");
+    imageDiv.append(newImage);
+    imageDiv.classList.add("image-container");
 
     card.append(
+      imageDiv,
       typeSection,
       quantitySection,
       priceSection,
