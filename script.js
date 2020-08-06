@@ -66,7 +66,7 @@ let smallPets = [
     experience: "beginner",
   },
   {
-    type: "Cat-Familiar",
+    type: "Cat Familiar",
     quantity: 10,
     price: 300,
     experience: "beginner",
@@ -93,12 +93,16 @@ const display = () => {
     card.classList.add("card");
     let typeSection = document.createElement("p");
     typeSection.innerText = largePet.type;
+    typeSection.classList.add("card-text");
     let quantitySection = document.createElement("p");
     quantitySection.innerText = `qty: ${largePet.quantity}`;
+    quantitySection.classList.add("card-text");
     let priceSection = document.createElement("p");
     priceSection.innerText = `price: ¥${largePet.price}`;
+    priceSection.classList.add("card-text");
     let experienceSection = document.createElement("p");
     experienceSection.innerText = largePet.experience;
+    experienceSection.classList.add("card-text");
     card.append(
       typeSection,
       quantitySection,
@@ -118,12 +122,16 @@ const smallDisplay = () => {
     card.classList.add("card");
     let typeSection = document.createElement("p");
     typeSection.innerText = smallPet.type;
+    typeSection.classList.add("card-text");
     let quantitySection = document.createElement("p");
     quantitySection.innerText = `qty: ${smallPet.quantity}`;
+    quantitySection.classList.add("card-text");
     let priceSection = document.createElement("p");
     priceSection.innerText = `price: ¥${smallPet.price}`;
+    priceSection.classList.add("card-text");
     let experienceSection = document.createElement("p");
     experienceSection.innerText = smallPet.experience;
+    experienceSection.classList.add("card-text");
     let smallImage = document.createElement("img");
     card.append(typeSection, quantitySection, priceSection, experienceSection);
     smallContainer.append(card);
