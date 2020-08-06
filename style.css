@@ -59,15 +59,17 @@ body {
   font-size: 45px;
 }
 .card {
+  border: none;
   margin: 10px;
   padding: 5px, 5px, 10px, 10px;
   background-color: #77a0a9;
   color: #32021f;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bolder;
-  width: 200px;
+  width: 90%;
   height: 200px;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 .card-text {
   padding: 5px;
@@ -81,4 +83,24 @@ body {
   color: white;
   border-style: none;
   font-family: "Grenze Gotisch", cursive;
+}
+
+.image-container {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.image {
+  max-width: 100%;
+  max-height: 100%;
+}
+.large {
+  flex: 1;
+  justify-content: center;
+}
+.small {
+  flex: 1;
+  justify-content: center;
 }
