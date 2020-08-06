@@ -192,6 +192,8 @@ smallDisplay();
 // });
 
 let cartArray = [];
+let checkoutArrayContainer = document.querySelector(".checkout-array");
+let checkoutContainer = document.querySelector(".checkout");
 
 menuContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("cart-button")) {
@@ -205,4 +207,11 @@ menuContainer.addEventListener("click", (e) => {
       console.log(cartArray);
     }
   }
+  checkoutArrayContainer.append(cartArray);
+});
+
+let cartButton = document.querySelector(".cart");
+
+cartButton.addEventListener("click", () => {
+  checkoutContainer.classList.remove("hide");
 });
