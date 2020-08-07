@@ -169,3 +169,7 @@ body {
 .hide {
   display: none;
 }
+
+.cart-item {
+  background-color: #6c596e;
+}

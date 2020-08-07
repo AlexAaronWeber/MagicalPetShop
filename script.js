@@ -210,8 +210,22 @@ menuContainer.addEventListener("click", (e) => {
   checkoutArrayContainer.append(cartArray);
 });
 
+cartArray.forEach((object) => {
+  let cartDiv = document.createElement("div");
+  cartDiv.classList.add("cart-item");
+  let typeSection = document.createElement("p");
+  typeSection.innerText = object.type;
+  typeSection.classList.add("checkout-pet");
+  let priceSection = document.createElement("p");
+  priceSection.innerText = `price: ¥${object.price}`;
+  priceSection.classList.add("checkout-pet");
+  checkoutArrayContainer.append(cartDiv);
+  cartDiv.append(typeSection, priceSection);
+});
+
 let cartButton = document.querySelector(".cart");
 
 cartButton.addEventListener("click", () => {
+  checkoutContainer.innerHTML = "";
   checkoutContainer.classList.remove("hide");
 });
