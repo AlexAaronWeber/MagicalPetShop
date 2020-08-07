@@ -199,6 +199,7 @@ menuContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("cart-button")) {
     let index = e.target.getAttribute("data-index");
     let type = e.target.getAttribute("data-type");
+
     if (type === "large") {
       cartArray.push(largePets[index]);
       console.log(cartArray);
@@ -207,6 +208,7 @@ menuContainer.addEventListener("click", (e) => {
       console.log(cartArray);
     }
   }
+  checkoutArrayContainer.innerHTML = "";
   cartArray.forEach((object) => {
     let cartDiv = document.createElement("div");
     cartDiv.classList.add("cart-item");
