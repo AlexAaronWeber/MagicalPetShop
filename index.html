@@ -36,19 +36,21 @@
     </main>
 
     <section class="checkout hide">
-      <div class="checkout-array">
-        <p>Subtotal</p>
-        <p>Sales Tax</p>
-        <p>Total</p>
-
-        <form class="checkout-form">
-          <label for="pay">Cash</label>
-          <input type="radio" id="pay" name="cash" value="cash" />
-          <label for="pay">Credit</label>
-          <input type="radio" id="pay" name="credit" value="credit" />
-          <label for="amount"></label>
-          <input type="text" name="amount" id="amount" />
-        </form>
+      <div class="checkout-box">
+        <div class="checkout-array"></div>
+        <div class="payment-box">
+          <p class="total">Subtotal</p>
+          <p class="total">Sales Tax</p>
+          <p class="total">Total</p>
+          <form class="checkout-form">
+            <label for="pay" class="total">Cash</label>
+            <input type="radio" id="pay" name="cash" value="cash" />
+            <label for="pay" class="total">Credit</label>
+            <input type="radio" id="pay" name="credit" value="credit" />
+            <label for="amount"></label>
+            <input type="text" name="amount" id="amount" />
+          </form>
+        </div>
       </div>
     </section>
 
