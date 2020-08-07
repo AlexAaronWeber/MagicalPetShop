@@ -216,12 +216,12 @@ menuContainer.addEventListener("click", (e) => {
     typeSection.innerText = object.type;
     typeSection.classList.add("checkout-pet");
     let priceSection = document.createElement("p");
-    priceSection.innerText = `price: ¥${object.price}`;
+    priceSection.innerText = `¥${object.price}`;
     priceSection.classList.add("checkout-pet");
     checkoutArrayContainer.append(cartDiv);
     cartDiv.append(typeSection, priceSection);
     let card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("checkout-card");
     card.append(cartDiv);
     checkoutArrayContainer.append(card);
   });

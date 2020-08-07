@@ -175,3 +175,15 @@ body {
   /* height: 200px;
   width: 300px; */
 }
+
+.checkout-array {
+  height: 300px;
+  width: 250px;
+  border: 1px solid #77a0a9;
+  border-radius: 5px;
+  background-color: #32021f;
+}
+
+.checkout-card {
+  background-color: #6c596e;
+}
