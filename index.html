@@ -37,7 +37,18 @@
 
     <section class="checkout hide">
       <div class="checkout-array"></div>
-      <form class="checkout-form"></form>
+      <p>Subtotal</p>
+      <p>Sales Tax</p>
+      <p>Total</p>
+
+      <form class="checkout-form">
+        <label for="pay">Cash</label>
+        <input type="radio" id="pay" name="cash" value="cash" />
+        <label for="pay">Credit</label>
+        <input type="radio" id="pay" name="credit" value="credit" />
+        <label for="amount"></label>
+        <input type="text" name="amount" id="amount" />
+      </form>
     </section>
 
     <footer class="footer">

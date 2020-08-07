@@ -207,25 +207,43 @@ menuContainer.addEventListener("click", (e) => {
       console.log(cartArray);
     }
   }
-  checkoutArrayContainer.append(cartArray);
+  cartArray.forEach((object) => {
+    let cartDiv = document.createElement("div");
+    cartDiv.classList.add("cart-item");
+    let typeSection = document.createElement("p");
+    typeSection.innerText = object.type;
+    typeSection.classList.add("checkout-pet");
+    let priceSection = document.createElement("p");
+    priceSection.innerText = `price: ¥${object.price}`;
+    priceSection.classList.add("checkout-pet");
+    checkoutArrayContainer.append(cartDiv);
+    cartDiv.append(typeSection, priceSection);
+    let card = document.createElement("div");
+    card.classList.add("card");
+    card.append(cartDiv);
+    checkoutArrayContainer.append(card);
+  });
 });
 
-cartArray.forEach((object) => {
-  let cartDiv = document.createElement("div");
-  cartDiv.classList.add("cart-item");
-  let typeSection = document.createElement("p");
-  typeSection.innerText = object.type;
-  typeSection.classList.add("checkout-pet");
-  let priceSection = document.createElement("p");
-  priceSection.innerText = `price: ¥${object.price}`;
-  priceSection.classList.add("checkout-pet");
-  checkoutArrayContainer.append(cartDiv);
-  cartDiv.append(typeSection, priceSection);
-});
+// for (object of cartArray) {
+//   let cartDiv = document.createElement("div");
+//   cartDiv.classList.add("cart-item");
+//   let typeSection = document.createElement("p");
+//   typeSection.innerText = object.type;
+//   typeSection.classList.add("checkout-pet");
+//   let priceSection = document.createElement("p");
+//   priceSection.innerText = `price: ¥${object.price}`;
+//   priceSection.classList.add("checkout-pet");
+//   checkoutArrayContainer.append(cartDiv);
+//   cartDiv.append(typeSection, priceSection);
+//   let card = document.createElement("div");
+//   card.classList.add("card");
+//   card.append(cartDiv);
+// }
 
 let cartButton = document.querySelector(".cart");
 
 cartButton.addEventListener("click", () => {
-  checkoutContainer.innerHTML = "";
+  // checkoutContainer.innerHTML = "";
   checkoutContainer.classList.remove("hide");
 });
