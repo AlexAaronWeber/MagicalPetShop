@@ -35,6 +35,9 @@ body {
   padding: 10px;
   position: relative;
 }
+.scrum {
+  display: none;
+}
 .cart {
   display: flex;
   position: absolute;
@@ -43,6 +46,11 @@ body {
   max-width: 50px;
   max-height: 50px;
   background-color: #6c596e;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.cart:hover {
+  background-color: orange;
 }
 
 .h1 {
@@ -106,6 +114,7 @@ body {
   color: white;
   border-style: none;
   font-family: "Grenze Gotisch", cursive;
+  cursor: pointer;
 }
 .cart-button:hover {
   color: orange;
@@ -180,6 +189,7 @@ body {
   height: 50%;
   width: 50%;
   background-color: #32021f;
+  border-radius: 5px;
   margin: 0;
   position: relative;
   margin-left: 5px;
@@ -196,6 +206,15 @@ body {
   margin: 0;
   justify-content: flex-end;
 }
+.exit {
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  font-family: "Grenze Gotisch", cursive;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
 .checkout-pet {
   margin: 0;
 }
@@ -207,4 +226,24 @@ body {
   position: absolute;
   bottom: 5px;
   margin-left: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  .ul {
+    flex-direction: column;
+    font-size: 25px;
+  }
+  .cart {
+    top: 33.3%;
+  }
+  .scrum {
+    display: flex;
+    position: absolute;
+    left: 45%;
+    top: 20px;
+    width: 125px;
+    height: 125px;
+    background-color: #6c596e;
+    border-radius: 200px;
+  }
 }
