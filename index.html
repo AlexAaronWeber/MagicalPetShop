@@ -46,12 +46,55 @@
           <p class="total kuai"></p>
           <form class="checkout-form">
             <label for="pay" class="cash">Cash</label>
-            <input type="radio" id="pay" name="pay" value="cash" />
+            <input class="cash" type="radio" id="pay" name="pay" value="cash" />
             <label for="pay" class="credit">Credit</label>
-            <input type="radio" id="pay" name="pay" value="credit" />
-            <label for="amount"></label>
-            <input type="text" name="amount" id="amount" />
-            <button>Submit</button>
+            <input
+              class="credit"
+              type="radio"
+              id="pay"
+              name="pay"
+              value="credit"
+            />
+            <div class="tendered hide">
+              <label class="amount" for="amount"></label>
+              <input class="amount" type="text" name="amount" id="amount" />
+              <button class="cash-submit">Submit</button>
+            </div>
+            <div class="credit-card hide">
+              <h3>Credit Payment</h3>
+              <label for="cname">Name on Card</label>
+              <input
+                type="text"
+                id="cname"
+                name="cardname"
+                placeholder="Octavius Scrum"
+              />
+              <label for="ccnum">Credit card number</label>
+              <input
+                type="text"
+                id="ccnum"
+                name="cardnumber"
+                placeholder="1111-2222-3333-4444"
+              />
+              <label for="expmonth">Exp Month</label>
+              <input
+                type="text"
+                id="expmonth"
+                name="expmonth"
+                placeholder="September"
+              />
+              <label for="expyear">Exp Year</label>
+              <input
+                type="text"
+                id="expyear"
+                name="expyear"
+                placeholder="2020"
+              />
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" name="cvv" placeholder="352" />
+              <button class="credit-submit">Submit</button>
+            </div>
+            <p class="money-back"></p>
           </form>
         </div>
       </div>

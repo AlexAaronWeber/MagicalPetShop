@@ -194,6 +194,9 @@ smallDisplay();
 let cartArray = [];
 let checkoutArrayContainer = document.querySelector(".checkout-array");
 let checkoutContainer = document.querySelector(".checkout");
+let amount = document.querySelector(".tendered");
+let form = document.querySelector(".checkout-form");
+let cardEntry = document.querySelector(".credit-card");
 
 menuContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("cart-button")) {
@@ -235,30 +238,35 @@ menuContainer.addEventListener("click", (e) => {
     taxes.innerText = `Tax: ¥${tax}`;
     let totally = document.querySelector(".total");
     totally.innerText = `Total: ¥${total}`;
-    // let exit = document.querySelector(".exit");
-    // exit.innerText = "Keep Shopping";
-    // exit.classList.add("hide");
   });
   console.log(sum);
   console.log(tax);
   console.log(total);
 });
 
+//almost working checkout! -ct
+
+// let totalSum = document.querySelector(".total");
+// const changeAmount = (amountData) => {
+//   change = amountData - totalSum;
+// };
+
+// form.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   if (e.target.classList.contains("cash")) {
+//     amount.classList.toggle("hide");
+//     let moneyBack = document.querySelector(".money-back");
+//     moneyBack.innerText = `Your change is ${changeAmount}`;
+//   } else if (e.target.classList.contains("credit")) {
+//     cardEntry.classList.toggle("hide");
+//   }
+// });
+
 let cartButton = document.querySelector(".cart");
 
 cartButton.addEventListener("click", () => {
   // checkoutContainer.innerHTML = "";
   checkoutContainer.classList.remove("hide");
-});
-
-let radioCash = document.querySelector(".cash");
-let radioCredit = document.querySelector(".credit");
-let form = document.querySelector(".checkout-form");
-
-form.addEventListener("click", (e) => {
-  if (e.target.classList.contains("cash")) {
-    let;
-  }
 });
 
 let exit = document.querySelector(".exit");
