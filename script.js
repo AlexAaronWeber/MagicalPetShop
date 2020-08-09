@@ -235,6 +235,9 @@ menuContainer.addEventListener("click", (e) => {
     taxes.innerText = `Tax: ¥${tax}`;
     let totally = document.querySelector(".total");
     totally.innerText = `Total: ¥${total}`;
+    // let exit = document.querySelector(".exit");
+    // exit.innerText = "Keep Shopping";
+    // exit.classList.add("hide");
   });
   console.log(sum);
   console.log(tax);
@@ -246,4 +249,10 @@ let cartButton = document.querySelector(".cart");
 cartButton.addEventListener("click", () => {
   // checkoutContainer.innerHTML = "";
   checkoutContainer.classList.remove("hide");
+});
+
+let exit = document.querySelector(".exit");
+exit.innerText = "Keep Shopping";
+exit.addEventListener("click", () => {
+  checkoutContainer.classList.add("hide");
 });
