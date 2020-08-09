@@ -251,6 +251,16 @@ cartButton.addEventListener("click", () => {
   checkoutContainer.classList.remove("hide");
 });
 
+let radioCash = document.querySelector(".cash");
+let radioCredit = document.querySelector(".credit");
+let form = document.querySelector(".checkout-form");
+
+form.addEventListener("click", (e) => {
+  if (e.target.classList.contains("cash")) {
+    let;
+  }
+});
+
 let exit = document.querySelector(".exit");
 exit.innerText = "Keep Shopping";
 exit.addEventListener("click", () => {
