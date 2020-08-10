@@ -165,7 +165,6 @@ const smallDisplay = () => {
     addButton.setAttribute("data-type", "small");
     addButton.innerText = "Add to Wagon";
     addButton.classList.add("cart-button");
-    // addButton.setAttribute("data-item", index);
     let imageDiv = document.createElement("div");
     imageDiv.append(newImage);
     imageDiv.classList.add("image-container");
@@ -183,20 +182,17 @@ const smallDisplay = () => {
 };
 smallDisplay();
 
-// menuContainer.addEventListener("click", (e) => {
-//   if (e.target.classList.contains("cart-button")) {
-//     let index = e.target.getAttribute("data-item");
-//     largePets.slice(index, 1) || smallPets.slice(index, 1);
-//     display();
-//   }
-// });
-
 let cartArray = [];
 let checkoutArrayContainer = document.querySelector(".checkout-array");
 let checkoutContainer = document.querySelector(".checkout");
 let amount = document.querySelector(".tendered");
 let form = document.querySelector(".checkout-form");
 let cardEntry = document.querySelector(".credit-card");
+
+let sum = 0;
+let tax = 0;
+let total = 0;
+let change = document.querySelector(".change");
 
 menuContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("cart-button")) {
@@ -211,10 +207,9 @@ menuContainer.addEventListener("click", (e) => {
     }
   }
   checkoutArrayContainer.innerHTML = "";
-  let sum = 0;
-  let tax = 0;
-  let total = 0;
-
+  total = 0;
+  sum = 0;
+  tax = 0;
   cartArray.forEach((object) => {
     let cartDiv = document.createElement("div");
     cartDiv.classList.add("cart-item");
@@ -239,39 +234,11 @@ menuContainer.addEventListener("click", (e) => {
     taxes.innerText = `Tax: ¥${tax}`;
     let totally = document.querySelector(".total");
     totally.innerText = `Total: ¥${total}`;
-    let change = document.querySelector(".change");
-
-    cashForm.addEventListener("submit", (e) => {
-      e.preventDefault;
-      let data = new FormData(form);
-      let cashValue = data.get("cash-form");
-      console.log(cashValue);
-      let changeAmount = cashValue - total;
-      change.innerText = `Change: $${changeAmount}`;
-    });
   });
   console.log(sum);
   console.log(tax);
   console.log(total);
 });
-
-//almost working checkout! -ct
-
-// let totalSum = document.querySelector(".total");
-// const changeAmount = (amountData) => {
-//   change = amountData - totalSum;
-// };
-
-// form.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   if (e.target.classList.contains("cash")) {
-//     amount.classList.toggle("hide");
-//     let moneyBack = document.querySelector(".money-back");
-//     moneyBack.innerText = `Your change is ${changeAmount}`;
-//   } else if (e.target.classList.contains("credit")) {
-//     cardEntry.classList.toggle("hide");
-//   }
-// });
 
 let cartButton = document.querySelector(".cart");
 
@@ -297,4 +264,15 @@ let receiptContainer = document.querySelector(".popup");
 let receiptButton = document.querySelector(".receipt");
 receiptButton.addEventListener("submit", (e) => {
   receiptContainer.classList.remove("hide");
+});
+
+cashForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  checkoutArrayContainer.innerHTML = "";
+  let data = new FormData(cashForm);
+  let cashValue = data.get("payment");
+  let changeAmount = cashValue - total;
+  console.log(cashValue);
+  console.log(total);
+  change.innerText = changeAmount;
 });
