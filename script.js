@@ -214,7 +214,7 @@ menuContainer.addEventListener("click", (e) => {
   let sum = 0;
   let tax = 0;
   let total = 0;
-  let totally = document.querySelector(".total");
+
   cartArray.forEach((object) => {
     let cartDiv = document.createElement("div");
     cartDiv.classList.add("cart-item");
@@ -237,8 +237,18 @@ menuContainer.addEventListener("click", (e) => {
     subTotal.innerText = `Subtotal: ¥${sum}`;
     let taxes = document.querySelector(".taxes");
     taxes.innerText = `Tax: ¥${tax}`;
-
+    let totally = document.querySelector(".total");
     totally.innerText = `Total: ¥${total}`;
+    let change = document.querySelector(".change");
+
+    cashForm.addEventListener("submit", (e) => {
+      e.preventDefault;
+      let data = new FormData(form);
+      let cashValue = data.get("cash-form");
+      console.log(cashValue);
+      let changeAmount = cashValue - total;
+      change.innerText = `Change: $${changeAmount}`;
+    });
   });
   console.log(sum);
   console.log(tax);
@@ -282,15 +292,9 @@ function show2() {
   document.getElementById("credit-input").style.display = "block";
 }
 
-let cashButton = document.querySelector(".cash-button");
-let change = document.querySelector(".change");
-// let cashValue = document.querySelector("cash-tendered").value;
-
-cashButton.addEventListener("submit", (e) => {
-  e.preventDefault;
-  let data = new FormData(form);
-  let cashValue = data.get("value");
-  let changeAmount = cashValue - total;
-  change = cashValue - total;
-  change.innerText = `Change: $${changeAmount}`;
+let cashForm = document.querySelector(".cash-form");
+let receiptContainer = document.querySelector(".popup");
+let receiptButton = document.querySelector(".receipt");
+receiptButton.addEventListener("submit", (e) => {
+  receiptContainer.classList.remove("hide");
 });
