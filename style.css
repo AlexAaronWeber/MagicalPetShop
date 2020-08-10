@@ -270,6 +270,30 @@ input[type="radio"]:checked ~ .reveal {
   max-width: 30px;
 }
 
+.change {
+  color: white;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.receipt-button {
+  padding: 5px;
+  background-color: white;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.popup {
+  height: 50%;
+  width: 50%;
+  background-color: #32021f;
+  border-radius: 5px;
+  margin: 0;
+  position: relative;
+  margin-left: 5px;
+  color: white;
+}
+
 @media only screen and (min-width: 768px) {
   .h1 {
     font-size: 30px;

@@ -41,10 +41,11 @@
         <button class="exit"></button>
         <div class="checkout-array"></div>
         <div class="payment-box">
-          <p class="subtotal kuai"></p>
-          <p class="taxes kuai"></p>
-          <p class="total kuai"></p>
-
+          <span class="span">
+            <p class="subtotal kuai"></p>
+            <p class="taxes kuai"></p>
+            <p class="total kuai"></p>
+          </span>
           <button onclick="show1()">Cash</button
           ><button onclick="show2()">Credit</button>
           <form class="cash-form checkout-form">
@@ -56,7 +57,7 @@
                 name="payment"
                 placeholder="$0.00"
               />
-              <button class="cash-button receipt">Submit</button>
+              <button class="cash-button">Submit</button>
             </div>
           </form>
           <form class="credit-form checkout-form">
@@ -84,15 +85,17 @@
               />
               <label for="payment"> CVV</label>
               <input type="text" id="cvv" name="payment" class="cvv" />
-              <button class="receipt">Submit</button>
+              <button>Submit</button>
             </div>
           </form>
         </div>
         <div class="change"></div>
+        <button class="receipt-button hide"></button>
       </div>
-    </section>
-    <section class="popup hide">
-      <p>Many thanks for your purchase!</p>
+      <section class="popup hide">
+        <p>Many thanks for your purchase!</p>
+        <button class="exit"></button>
+      </section>
     </section>
 
     <footer class="footer">

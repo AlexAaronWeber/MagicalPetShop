@@ -260,11 +260,13 @@ function show2() {
 }
 
 let cashForm = document.querySelector(".cash-form");
-let receiptContainer = document.querySelector(".popup");
-let receiptButton = document.querySelector(".receipt");
-receiptButton.addEventListener("submit", (e) => {
-  receiptContainer.classList.remove("hide");
-});
+// let receiptContainer = document.querySelector(".popup");
+// let receiptButton = document.querySelector(".receipt");
+// receiptButton.addEventListener("submit", (e) => {
+//   receiptContainer.classList.remove("hide");
+// });
+
+let receiptButton = document.querySelector(".receipt-button");
 
 cashForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -274,5 +276,49 @@ cashForm.addEventListener("submit", (e) => {
   let changeAmount = cashValue - total;
   console.log(cashValue);
   console.log(total);
-  change.innerText = changeAmount;
+  change.innerText = `Change: ¥${changeAmount}`;
+  receiptButton.classList.remove("hide");
+  receiptButton.innerText = "Receipt";
+});
+
+let popup = document.querySelector(".popup");
+let span = document.querySelector(".span");
+let checkoutBox = document.querySelector(".checkout-box");
+receiptButton.addEventListener("click", (e) => {
+  popup.classList.remove("hide");
+  checkoutBox.classList.add("hide");
+  console.log("hi");
+  popup.append(checkoutArrayContainer, span);
+  checkoutArrayContainer.innerHTML = "";
+  total = 0;
+  sum = 0;
+  tax = 0;
+  cartArray.forEach((object) => {
+    let cartDiv = document.createElement("div");
+    cartDiv.classList.add("cart-item");
+    let typeSection = document.createElement("p");
+    typeSection.innerText = object.type;
+    typeSection.classList.add("checkout-pet");
+    let priceSection = document.createElement("p");
+    priceSection.innerText = `¥${object.price}`;
+    priceSection.classList.add("checkout-pet");
+    checkoutArrayContainer.append(cartDiv);
+    cartDiv.append(typeSection, priceSection);
+    let card = document.createElement("div");
+    card.classList.add("checkout-card");
+    card.append(cartDiv);
+    checkoutArrayContainer.append(card);
+    sum += object.price;
+    tax = sum * 0.06;
+    total = sum + tax;
+    let subTotal = document.querySelector(".subtotal");
+    subTotal.innerText = `Subtotal: ¥${sum}`;
+    let taxes = document.querySelector(".taxes");
+    taxes.innerText = `Tax: ¥${tax}`;
+    let totally = document.querySelector(".total");
+    totally.innerText = `Total: ¥${total}`;
+  });
+  console.log(sum);
+  console.log(tax);
+  console.log(total);
 });
