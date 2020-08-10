@@ -265,7 +265,6 @@ menuContainer.addEventListener("click", (e) => {
 let cartButton = document.querySelector(".cart");
 
 cartButton.addEventListener("click", () => {
-  // checkoutContainer.innerHTML = "";
   checkoutContainer.classList.remove("hide");
 });
 
@@ -273,4 +272,21 @@ let exit = document.querySelector(".exit");
 exit.innerText = "Keep Shopping";
 exit.addEventListener("click", () => {
   checkoutContainer.classList.add("hide");
+});
+
+function show1() {
+  document.getElementById("cash-input").style.display = "block";
+}
+function show2() {
+  document.getElementById("credit-input").style.display = "block";
+}
+
+let cashButton = document.querySelector(".cash-button");
+let change = document.querySelector(".change");
+let cashValue = document.getElementById("cash-tendered").value;
+let changeAmount = cashValue - total;
+
+cashButton.addEventListener("submit", (e) => {
+  e.preventDefault;
+  change.innerText = `Change: $${changeAmount}`;
 });

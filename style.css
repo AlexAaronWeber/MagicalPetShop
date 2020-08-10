@@ -183,7 +183,8 @@ body {
 .exit {
   cursor: pointer;
   position: absolute;
-  right: 0px;
+  top: 5px;
+  right: 5px;
   font-family: "Grenze Gotisch", cursive;
   padding: 5px;
   border: none;
@@ -250,6 +251,23 @@ body {
 
 .footer2:hover {
   color: orange;
+}
+
+/* .reveal {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+input[type="radio"]:checked ~ .reveal {
+  opacity: 1;
+  max-height: 50px;
+  overflow: visible;
+} */
+.expiration {
+  max-width: 30px;
+}
+.cvv {
+  max-width: 30px;
 }
 
 @media only screen and (min-width: 768px) {

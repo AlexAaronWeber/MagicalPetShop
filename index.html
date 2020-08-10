@@ -46,7 +46,14 @@
           <p class="total kuai"></p>
           <form class="checkout-form">
             <label for="pay" class="cash">Cash</label>
-            <input class="cash" type="radio" id="pay" name="pay" value="cash" />
+            <input
+              class="cash"
+              type="radio"
+              id="pay"
+              name="pay"
+              value="cash"
+              onclick="show1()"
+            />
             <label for="pay" class="credit">Credit</label>
             <input
               class="credit"
@@ -54,13 +61,52 @@
               id="pay"
               name="pay"
               value="credit"
+              onclick="show2()"
             />
-            <div class="tendered hide">
+            <div class="hide" id="cash-input">
+              <label for="payment">Cash Tendered</label>
+              <input
+                type="text"
+                id="cash-tendered"
+                name="payment"
+                placeholder="$0.00"
+              />
+              <button class="cash-button" type="button">Submit</button>
+            </div>
+            <div class="change"></div>
+            <div class="hide" id="credit-input">
+              <label for="payment">Credit Card Info</label>
+              <input
+                type="text"
+                id="credit-card-number"
+                name="payment"
+                placeholder="Enter CC number"
+              />
+              <label for="payment">Exp. Month</label>
+              <input
+                type="text"
+                id="expiration"
+                name="payment"
+                class="expiration"
+              />
+              <label for="payment">Exp. Year</label>
+              <input
+                type="text"
+                id="expiration"
+                name="payment"
+                class="expiration"
+              />
+              <label for="payment"> CVV</label>
+              <input type="text" id="cvv" name="payment" class="cvv" />
+              <button>Submit</button>
+            </div>
+
+            <!-- <div class="tendered hide">
               <label class="amount" for="amount"></label>
               <input class="amount" type="text" name="amount" id="amount" />
               <button class="cash-submit">Submit</button>
-            </div>
-            <div class="credit-card hide">
+            </div> -->
+            <!-- <div class="credit-card hide">
               <h3>Credit Payment</h3>
               <label for="cname">Name on Card</label>
               <input
@@ -94,7 +140,7 @@
               <input type="text" id="cvv" name="cvv" placeholder="352" />
               <button class="credit-submit">Submit</button>
             </div>
-            <p class="money-back"></p>
+            <p class="money-back"></p> -->
           </form>
         </div>
       </div>
