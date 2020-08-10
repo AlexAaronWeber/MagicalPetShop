@@ -214,6 +214,7 @@ menuContainer.addEventListener("click", (e) => {
   let sum = 0;
   let tax = 0;
   let total = 0;
+  let totally = document.querySelector(".total");
   cartArray.forEach((object) => {
     let cartDiv = document.createElement("div");
     cartDiv.classList.add("cart-item");
@@ -236,7 +237,7 @@ menuContainer.addEventListener("click", (e) => {
     subTotal.innerText = `Subtotal: ¥${sum}`;
     let taxes = document.querySelector(".taxes");
     taxes.innerText = `Tax: ¥${tax}`;
-    let totally = document.querySelector(".total");
+
     totally.innerText = `Total: ¥${total}`;
   });
   console.log(sum);
@@ -283,10 +284,13 @@ function show2() {
 
 let cashButton = document.querySelector(".cash-button");
 let change = document.querySelector(".change");
-let cashValue = document.getElementById("cash-tendered").value;
-let changeAmount = cashValue - total;
+// let cashValue = document.querySelector("cash-tendered").value;
 
 cashButton.addEventListener("submit", (e) => {
   e.preventDefault;
+  let data = new FormData(form);
+  let cashValue = data.get("value");
+  let changeAmount = cashValue - total;
+  change = cashValue - total;
   change.innerText = `Change: $${changeAmount}`;
 });
