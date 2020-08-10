@@ -327,4 +327,5 @@ exit2.innerText = "Keep Shopping";
 exit2.addEventListener("click", () => {
   popup.classList.add("hide");
   checkoutContainer.classList.add("hide");
+  checkoutBox.classList.remove("hide");
 });
